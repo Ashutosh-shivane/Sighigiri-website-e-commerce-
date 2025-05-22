@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>menu-bar</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\aptable.css">
+	
+</head>
+<body>
+	{% extends "adminbase.html" %}
+	{% block body %}
+<div class="hi">
+	<h1>Welcome admin</h1>
+</div>
+
+
+<div class="hi">
+		Users information
+	</div>
+<table>
+	<tr>
+		<td>id</td>
+		<td>username</td>
+		<td>email</td>
+
+		<td>phone</td>
+		
+	</tr>
+	{% for log1 in log %}
+	<tr>
+		<td>{{log1.id}}</td>
+		<td>{{log1.username}}</td>
+		<td>{{log1.email}}</td>
+		<td>{{log1.phone}}</td>
+		
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}
+</body>
+</html>

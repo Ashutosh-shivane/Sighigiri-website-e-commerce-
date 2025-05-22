@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>menu-bar</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\adminbase.css">
+	
+</head>
+<body>
+<div class="header">
+	<img src="{{ url_for('static', filename='img/logo12.png' ) }}" align="center">
+	<h1>SIDDHIGIRI MATH User profile</h1>
+</div>
+<div class="menu-bar">
+<ul>
+	<li class="active"><a href="\profile"><i class="fa fa-home"></i>profile</a></li>
+	<li><a href="\yourcart"><i class="fa fa-user"></i>your cart</a></li>
+	<li><a href="\yourorder"><i class="fa fa-home"></i>Your order</a></li>
+	<li><a href="\"><i class="fa fa-home"></i>home</a></li>
+	
+		
+	
+		
+		
+
+
+	
+</ul>
+<a href="/logout"><button>Logout</button></a>
+</div>
+{% block body %}
+{% endblock%}
+</body>
+</html>

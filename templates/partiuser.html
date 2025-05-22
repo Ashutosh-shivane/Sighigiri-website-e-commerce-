@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form action="/down" method="post">
+		
+	<select name="name">
+		{% for data in data %}
+			<option value="{{data[0]}}">{{data[0]}}</option>
+		{% endfor %}
+	</select>
+		<input type="submit" value="hi">
+	</form>
+
+</body>
+</html>

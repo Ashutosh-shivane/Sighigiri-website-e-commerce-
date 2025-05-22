@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+/**{
+	margin: 0;
+	padding: 0;
+	background-color: ;
+
+	}
+.body{
+	margin: 0;
+	padding: 0;
+	background-color: ;
+	font-family: Fantasy;
+
+}*/
+
+
+.as
+{
+	width: 600px;
+	margin: 100px auto 0 auto;
+	padding: 20px;
+	box-shadow: 0 4px 8px #30475e,0 4px 8px 0 #30475e;
+	background-color: /*#F1C40F*/#76D7C4;
+	font-size: 20px;
+
+}
+.h1
+{
+	text-align: center;
+}
+.box1
+{
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 15px;
+	box-sizing: border-box;
+	margin: 10px 0 15px 0;
+	background-color: /*#30475e*/;
+}
+.sp{
+	width: 49%;
+	padding: 10px;
+	border: none;
+	border-radius: 15px;
+	background-color: /*#30475e*/ #D0D3D4;
+	font-size: 18px;
+	color: black;
+	font-size: 20px;
+
+}
+@media screen and (max-width: 600px){
+
+	.body{
+		padding: 20px;
+	}
+	.form{
+		width: 100%;
+		box-sizing: border-box;
+	}
+	
+}
+
+.as12
+{
+	width: 600px;
+	margin: 100px auto 0 auto;
+	padding: 20px;
+	box-shadow: 0 4px 8px #30475e,0 4px 8px 0 #30475e;
+	background-color: #76D7C4 ;
+	font-size: 20px;
+	
+
+}
+.form {
+  background-color: #e5f5f8;
+  border-radius: 10px;
+  font-family:/* Avenir*/Serif;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+#form-prompt {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+button { margin-top: 20px; }
+
+button:hover, input:hover, label:hover { cursor: pointer; }
+</style>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Payment Details</title>
+</head>
+<body>
+	{% extends "base1.html" %}
+  {% block body %}
+	 
+	
+		<form action="/buy1" method="post" class="as">
+		<h1 align="center">Address Details</h1><br>
+		Payer Name<br>
+		<input class="box1" type="text" name="an" required id="name" placeholder="Enter Name"><br>
+		Village<br>
+		<input class="box1" type="text" name="av" required id="name" placeholder="Enter Village"><br>
+		Tahsil<br>
+		<input class="box1" type="text" name="at" required id="name" placeholder="Enter Tahsil"><br>
+		District<br>
+		<input class="box1" type="text" name="ad" required id="name" placeholder="Enter District"><br>
+		State<br>
+		<input class="box1" type="text" name="as" required id="name" placeholder="Enter State"><br>
+		Pincode<br>
+		<input class="box1" type="text" name="apin" id="name" placeholder="Enter Pincode"><br>
+		Phone<br>
+		<input class="box1" type="text" name="aphone" required id="name" placeholder="Enter phone"><br><br><br>
+	</div>
+	
+
+	
+
+		<h1 align="center">Payment Method</h1><br><br>
+
+		<input type="radio"  name="fav" value="card" required>
+		Credit card/Debit card<br>
+		<input type="radio"  name="fav" value="nb" required>
+		Net banking<br>
+		<input type="radio"  name="fav" value="cod" required>
+		Cash on delivery<br>
+
+		
+    <button class="sp" input type="submit" value="pay">Pay Now</button>          
+ 	
+	</div>
+	</form>
+
+{% endblock %}
+</body>
+</html>

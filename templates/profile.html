@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+.rp  i{
+	height: 100px;
+	width: 100px;
+	color: blue;
+	font-size:200px ;
+	margin-left: 155px;
+	margin-top: 40px;
+}
+.rp1{
+	font-size: 25px;
+	margin-left: 20px;
+	margin-top: 50px;
+	padding-bottom: 10px;
+	margin-right: 20px;
+}
+.rpall{
+	border: 2px solid black;
+	width: 500px;
+	margin-left: 350px;
+	margin-top: 50px;
+}
+.rp1 ul li{
+	text-decoration: none;
+	list-style: none;
+	padding-bottom: 10px;
+	border-bottom:1px solid red ;
+}
+.rp1 ul li span{
+	color: #570000;
+	margin-right: 5px;
+	font-size: 30px;
+}
+</style>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	{% extends "userbase.html" %}
+	{% block body %}
+	
+	<div class="rpall">
+	<div class="rp"><i class="fa fa-user-circle-o"></i></div>
+	<div class="rp1">
+		<ul>
+		<li><span>Name:</span>{{looks[0][1]}}<br></li>
+		<li><span>Email:</span>{{looks[0][2]}}<br></li>
+		{% if looks1 != [] %}
+		<li><span>Phone:</span>{{looks1[0][7]}}<br></li>
+		<li><span>Address:</span>{{looks1[0][3]}},{{looks1[0][4]}},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{looks1[0][5]}},{{looks1[0][6]}},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pincode:{{looks1[0][8]}}<br></li>
+		{% endif %}
+		</ul>
+	</div>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="\..\static\ayurvedic.css">
+	<title>
+		Ayurvedic
+	</title>
+</head>
+<body>
+	{% set xyz = ext %}
+	{% extends xyz %}
+	{% block body %}
+<div class="all">
+	<div class="flex_container">
+		{% for prod in prods%}
+		<a href="/prod1/{{prod.pid}}">
+		<div class="flex_item" id="flex_item1">
+		
+		
+			{% set imgs='math/'+prod.img %}
+			<img src="{{ url_for('static', filename=imgs ) }}" height	="300px" width="300px">
+			<span class="bcs">Name:</span><span class="bcs1">{{prod.name}}</span><br>
+			<span class="bcs">Price:</span><span class="bcs1">{{prod.price}} Rs</span>
+		
+		</div>
+		</a>
+	{% endfor %}
+
+	</div>
+</div>
+	{% endblock %}
+
+</body>
+</html>

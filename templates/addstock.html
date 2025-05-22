@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>animated dashboard form</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\dash.css">
+</head>
+<body>
+	{% extends "adminbase.html" %}
+	{% block body %}
+	<div class="center">
+		<h1>welcome admin
+
+		</h1>{% for prod in prods%}
+		{% set no=prod.ids %}
+		<form method="post" action="/addstock1/{{prod[1]}}">
+			
+			<div class="txt_field">
+				name:{{prod[2]}}
+				
+			</div>
+			<div class="txt_field">
+				product id:{{prod[1]}}
+				
+			</div>
+			<div class="txt_field">
+				<input type="number" name="stock" min="1" >
+				<span></span>
+				<label>stock</label>
+			</div>
+			
+			
+			
+
+			
+			
+			<input type="submit" value="addstock">
+			</div>
+			
+		</form>
+		{% endfor %}
+
+	</div>
+	
+	{% endblock %}		
+</body>
+</html>

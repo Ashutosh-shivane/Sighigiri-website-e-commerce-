@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:25px;
+  min-height: 100vh;
+  
+}
+
+.container form{
+  padding:20px;
+  width:700px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.container form .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.container form .row .col{
+  flex:1 1 250px;
+}
+
+.container form .row .col .title{
+  font-size: 20px;
+  color:#333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.container form .row .col .inputBox{
+  margin:15px 0;
+}
+
+.container form .row .col .inputBox span{
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input{
+  width: 100%;
+  border:1px solid #ccc;
+  padding:10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus{
+  border:1px solid #000;
+}
+
+.container form .row .col .flex{
+  display: flex;
+  gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+  margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn{
+  width: 100%;
+  padding:12px;
+  font-size: 17px;
+  background: #27ae60;
+  color:#fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.container form .submit-btn:hover{
+  background: #2ecc71;
+}
+table{
+    border: 2px solid black;
+
+}
+th,td,tr{
+    border: 1px solid grey;
+
+}
+td{
+    padding: 3px;
+}
+.pay button{
+    background-color: green;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    font-size: 18px;
+    border-radius: 100px;
+}
+.sp{
+    background: white;
+    position: absolute;
+    margin-top: 360px;
+
+}
+.sp button{
+    font-size: 25px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="container">
+
+     {% for a in nbooks %}
+        <form action="/lpay/{{a.bno}}" method="post">
+           
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">ticket booking</h3>
+                <span>booking no.: {{a.bno}}</span>
+                <div class="inputBox">
+                    <span>full name :{{a.name}} </span>
+                    
+                </div>
+                {% set bno=a.bno %}
+                <div class="inputBox">
+                    <span>Aadhaar :{{a.adhar}}</span>
+                    
+                </div>
+                <div class="inputBox">
+                    <span>date:{{a.date}}</span>
+                    
+                </div>
+                <div class="inputBox">
+                    <span>time :{{a.time}}</span>
+                    
+                </div>
+
+
+                <div class="inputBox">
+                    <span>your persons :{{a.normal}}</span>
+                   
+                </div>
+                <div class="inputBox">
+                    <span>kids :{{a.kids}}</span>
+                    
+                </div>
+
+                
+
+            </div>
+
+            <div class="col">
+
+                
+                <div class="inputBox">
+                    <h2><span>payment :</span></h2>
+                    <table>
+                        <tr>
+                            <th>name</th>
+                            <th>quantity</th>
+                            <th>payment</th>
+                        </tr>
+                        <tr>
+                            <td>persons</td>
+                            <td>{{a.normal}}</td>
+                            {% set per=a.normal*130 %}
+                            <td>{{per}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>kids</td>
+                            <td>{{a.kids}}</td>
+                            {% set ki=a.kids*70 %}
+                            <td>{{ki}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">total=</td>
+                            <td>{{a.normal*130+a.kids*70}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="pay">
+                    <input type="submit" value="Proceed to Payment">
+                   
+                </div>
+              
+            </div>
+    
+        </div>
+        
+    </form>
+    <div class="sp">
+    <a href="/booking3/{{a.bno}}"><button>Edit</button></a>
+    <a href="/pay3/{{bno}}"><button>cancel booking</button></a>
+</div>{% endfor %}
+</div>       
+</body>
+</html>

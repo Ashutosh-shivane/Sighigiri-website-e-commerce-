@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>animated register form</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\style1.css">
+</head>
+<body>
+	<div class="header"><h1>SIDDHIGIRI MATH</h1></div>
+	<div class="center">
+		<h1>Register</h1>
+		<form method="post" action="\registerval">
+			<div class="txt_field">
+				<input type="text" name="username" required>
+				<span></span>
+				<label>Username</label>
+			</div>
+			<div class="txt_field">
+				<input type="email" name="email" required>
+				<span></span>
+				<label>Email</label>
+			</div>
+			<div class="txt_field">
+				<input type="password" name="password" required>
+				<span></span>
+				<label>Enter Password</label>
+			</div>
+			<div class="txt_field">
+				<input type="password" name="repass" required>
+				<span></span>
+				<label>Renter Password</label>
+			</div>
+			
+			<div class="txt_field">
+				<input type="text" name="phone" required>
+				<span></span>
+				<label>phone no.</label>
+			</div>
+
+
+			
+			<input type="submit" value="Register">
+			<div class="signup_link">
+				Allready have a account, <a href="\login">Log in</a>
+			</div>
+		</form>
+	</div>
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	{% for a in messages %}
+	<div class="alert-box hide hidden">
+     {{a}}
+     <span class="close-alert">&times;</span>
+ 	 </div>
+	{% endfor%}	
+	{% endif %}
+	{% endwith%}		
+</body>
+</html>

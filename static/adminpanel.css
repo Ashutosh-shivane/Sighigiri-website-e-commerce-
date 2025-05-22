@@ -1,0 +1,49 @@
+*
+{
+
+	box-sizing: border-box;
+	
+}
+.
+{
+	padding: 0;
+	margin: 0;
+	
+}
+
+
+
+
+.hi{
+	text-align: center;
+	font-size: 40px;
+}
+
+.btn{
+	align-content: center;
+	margin-left: 197px;
+
+}
+.btn input{
+	height: 400px;
+	font-size: 28px;
+	margin: 10px 10px;
+	width: 400px;
+	cursor: pointer;
+}
+.btn a{
+	
+}
+.btn2{
+	align-content: center;
+	margin-left: 540px;
+	font-size: 50px;
+}
+.btn2 input {
+	font-size: 30px;
+}
+
+
+
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Product page</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\product.css">
+</head>
+<body>
+	{% set xyz = ext %}
+	{% extends xyz %}
+	{% block body %}
+	
+	<div class="all">
+	<h2>Name:-{{prod.name}}</h2>
+	{% set imgs='math/'+prod.img %}
+	<img src="{{ url_for('static', filename=imgs ) }}" height="400px" width="400px">
+	<h2>price:- {{prod.price}} rs</h2>
+	<div class="btn">
+	<a href="/buy/{{prod.pid}}"><input type="submit" value="buy now"></a>
+	<a href="/cart/{{prod.pid}}"><input type="submit" value="Add to cart"></a>
+	</div>
+	
+	<div class="now"><h2>product info:-</h2></div>
+	<p><h3>{{prod.desci}}</h3></p></div>
+{% endblock %}
+</body>
+</html>

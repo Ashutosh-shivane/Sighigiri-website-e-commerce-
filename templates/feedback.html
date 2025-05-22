@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>animated feedback form</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\feedback.css">
+</head>
+<body>
+	{% set xyz = ext %}
+	{% extends "base.html" %}
+	{% block body %}
+	<div class="center">
+		<h1>feedback</h1>
+		<form method="post" action="\feedback">
+			<div class="txt_field">
+				<input type="text" name="name" required>
+				<span></span>
+				<label>Name</label>
+			</div>
+			<div class="txt_field">
+				<input type="email" name="email" required>
+				<span></span>
+				<label>Email</label>
+			</div>
+			<div class="text_area">
+			<label>Message :-</label>
+			<textarea cols="45" rows="15" name="msg" required></textarea>
+			</div>
+			<div class="abcde">
+			<input type="submit" value="send">
+			</div>
+		</form>
+	</div>	
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	{% for a in messages %}
+	<div class="alert-box hide hidden">
+     {{a}}
+     <span class="close-alert">&times;</span>
+ 	 </div>
+	{% endfor%}	
+	{% endif %}
+	{% endwith%}
+	{% endblock %}	
+</body>
+</html>

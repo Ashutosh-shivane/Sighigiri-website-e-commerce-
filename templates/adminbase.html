@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>menu-bar</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\adminbase.css">
+	
+</head>
+<body>
+<div class="header">
+	<img src="{{ url_for('static', filename='img/logo12.png' ) }}" align="center">
+	<h1>SIDDHIGIRI MATH ADMIN PANEL</h1>
+</div>
+<div class="menu-bar">
+<ul>
+	<li class="active"><a href="\dashboard"><i class="fa fa-home"></i>Home</a></li>
+	<li><a href="\dashproduct"><i class="fa fa-user"></i>Product</a></li>
+	<li><a href="\dashuser"><i class="fa fa-home"></i>User</a></li>
+	<li><a href="\stock"><i class="fa fa-home"></i>stock</a></li>
+	<li><a href="\dorder"><i class="fa fa-home"></i>orders</a></li>
+	<li><a href="\admin_report"><i class="fa fa-home"></i>Reports</a></li>
+		
+	
+		
+		
+
+
+	
+</ul>
+<a href="/logout1"><button>Logout</button></a>
+</div>
+{% block body %}
+{% endblock%}
+</body>
+</html>

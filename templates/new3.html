@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REPORT</title>
+</head>
+<body>
+
+<h2>Generate Report from Dropdown</h2>
+	<form action="{{url_for('.download_report')}}" method='POST'>
+	<select name="name">
+		{% for data in data %}
+			<option value="{{data[0]}}">{{data[0]}}</option>
+		{% endfor %}
+	</select>
+	
+	<input type="submit" name="submit">
+	</form>
+</body>
+</html>

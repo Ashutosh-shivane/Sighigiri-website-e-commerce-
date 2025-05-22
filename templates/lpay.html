@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:25px;
+  min-height: 100vh;
+  flex-direction: column;
+  
+}
+
+.container .box{
+  padding:20px;
+  width:700px;
+
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.container form .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.container form .row .col{
+  flex:1 1 250px;
+}
+
+.container form .row .col .title{
+  font-size: 20px;
+  color:#333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.container form .row .col .inputBox{
+  margin:15px 0;
+}
+
+.container form .row .col .inputBox span{
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input{
+  width: 100%;
+  border:1px solid #ccc;
+  padding:10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus{
+  border:1px solid #000;
+}
+
+.container form .row .col .flex{
+  display: flex;
+  gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+  margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn{
+  width: 60%;
+  padding:12px;
+  font-size: 17px;
+  background: #27ae60;
+  color:#fff;
+  margin-top: 5px;
+  cursor: pointer;
+  margin-left: 141px;
+  border-radius: 8px;
+}
+
+.container form .submit-btn:hover{
+  background: #2ecc71;
+}
+.as{
+    border: 1px solid  #ccc;
+    margin-bottom: 18px;
+    padding-bottom: 9px;
+    padding-top: 8px;
+    padding-left: 5px;
+}
+.sub a input[type=submit]{
+    width: 60%;
+    margin-left: 141px;
+   
+    padding:12px;
+    font-size: 17px;
+    background: #27ae60;
+    color:#fff;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+
+}
+</style>
+<head>
+   <!--  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    
+    <!-- custom css file link  -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+</head>
+<body>
+    
+
+    <div class="container">
+    
+    <div class="box">
+        <form action="/bookcard/{{lpays[0][0]}}/{{lpays[0][4]}}" method="POST">
+
+            <div class="row">
+
+                <div class="col">
+               
+                    <h3 class="title">billing address</h3>
+                
+                    <div class="inputBox">
+                        <span>Booking no. :</span>
+                        <div class="as">
+                        {{lpays[0][0]}}
+                        </div>
+                    
+                    </div>
+                    <div class="inputBox">
+                        <span>name :</span>
+                        <div class="as">
+                        {{lpays[0][2]}}
+                        </div>
+                    
+                    </div>
+                    <div class="inputBox">
+                        <span>date:</span>
+                        <div class="as">
+                        {{lpays[0][1]}}
+                        </div>
+                    
+                    </div>
+                    <div class="inputBox">
+                        <span>total</span>
+                        {% set a =lpays[0][6]*130 %}
+                        {% set b =lpays[0][7]*70 %}
+                        <div class="as">
+                        {{a+b}} rs
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    
+                <h3 class="title">payment</h3>
+                    <input type="radio" name="pay" value="credit" required>
+                    <label for="credit"><span> Credit Card</span></label>
+                    <input type="radio" name="pay" value="debit" required>
+                    <label for="debit"><span>Debit Card</span></label>
+                
+                    <div class="inputBox">
+                    <span>name on card :</span>
+                    <input type="text" name="name" placeholder="name on card">
+                    </div>
+                    <div class="inputBox">
+                    <span> card number :</span>
+                    <input type="number" name="cardno1" placeholder="card number">
+                    </div>
+                    <div class="inputBox">
+                    <span>exp month :</span>
+                    <input type="text" name="expm" placeholder="month">
+                    </div>
+
+                    <div class="flex">
+                    <div class="inputBox">
+                        <span>exp year :</span>
+                        <input type="number" name="expy" placeholder="year">
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV :</span>
+                        <input type="text" name="cvv" placeholder="cvv">
+                    </div>
+                    </div>
+               
+           
+
+      
+        
+                </div>
+            <input type="submit" value="pay" class="submit-btn">
+        
+        </div>
+     </form>
+    
+    <div class="sub">
+     <a href="/pay3/{{lpays[0][0]}}"><input type="submit" value="Cancel booking" class="submit-btn"></a>
+    </div>
+</div>   
+</div>
+
+</body>
+</html>

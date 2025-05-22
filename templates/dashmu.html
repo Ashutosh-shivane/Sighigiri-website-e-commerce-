@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>menu-bar</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\dashmu.css">
+	
+</head>
+<body>
+<div class="header">
+	<img src="{{ url_for('static', filename='img/logo12.png' ) }}" align="center">
+	<h1>SIDDHIGIRI MATH ADMIN PANEL</h1>
+</div>
+<div class="menu-bar">
+<ul>
+	<li class="active"><a href="\dashmu"><i class="fa fa-home"></i>Home</a></li>
+	
+</ul>
+<a href="/logout1"><button>Logout</button></a>
+</div>
+<div class="center">
+    <h1>Search Your ticket</h1>
+    <form method="post" action="\dashticket">
+      <div class="txt_field">
+        <input type="text" name="bno">
+        <span></span>
+        <label>Booking no. :</label>
+      </div>
+       <div class="abcde">
+      <input type="submit" value="send">
+      </div>
+	</form>
+</div>
+</body>
+</html>

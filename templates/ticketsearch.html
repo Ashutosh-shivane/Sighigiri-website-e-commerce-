@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+</style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop-dowm menu</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="\..\static\ticketsearch.css">
+</head>
+<body>
+  {% set xyz = ext %}
+  {% extends xyz %}
+  {% block body %}
+
+  <div class="center">
+    <h1>Search Your ticket</h1>
+    <form method="post" action="\ticket">
+      <div class="txt_field">
+        <input type="text" name="bno">
+        <span></span>
+        <label>Booking no. :</label>
+      </div>
+      <div class="txt_field">
+        <input type="text" name="phone">
+        <span></span>
+        <label>Phone no. :<sup>*</sup></label>
+      </div>
+      <div><h2>Or</h2></div>
+      <div class="txt_field">
+        <input type="text" name="adhar">
+        <span></span>
+        <label>Adhar no.</label>
+      </div>
+        <div class="txt_field">
+        <input type="text" name="phone">
+        <span></span>
+        <label>Phone no. :<sup>*</sup></label>
+      </div>
+      
+      <div class="abcde">
+      <input type="submit" value="send">
+      </div>
+    </form>
+  </div>
+  {% endblock%}
+</body>
+</html>

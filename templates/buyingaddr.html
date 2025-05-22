@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form action="/buy1" method="post">
+	<h4>Address Details</h4><br>
+        name:<input type="text" name="an" required><br>
+        villege:<input type="text" name="av" required><br>
+        tahsil:<input type="text" name="at" required><br>
+        district:<input type="text" name="ad" required><br>
+        state:<input type="text" name="as" required><br>
+        phone:<input type="tel" name="aphone" required><br>
+        pincode:<input type="pincode" name="apin" required><br>
+        <br><br><br>
+        Choose a payment method:<br>
+	<input type="radio"  name="fav" value="card" required>
+	<label for="card">Credit card/Debit card</label><br>
+	
+	<input type="radio"  name="fav" value="nb" required>
+	<label for="nb">Net banking</label><br>
+	<input type="radio"  name="fav" value="cod" required>
+	<label for="cod">Cash on delivery</label><br>            
+    
+    <input type="submit" value="pay">           
+	</form>
+</body>
+</html>

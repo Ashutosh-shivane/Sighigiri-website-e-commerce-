@@ -1,0 +1,5 @@
+# Ignore all Python files
+*.py
+
+# But don't ignore main.py
+!a5.py

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>animated login form</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\style.css">
+</head>
+<body>
+	<div class="header"><h1>SIDDHIGIRI MATH</h1></div>
+	<div class="center">
+		<h1>Login</h1>
+		<form method="post" action="\loginval">
+			<div class="txt_field">
+				<input type="text" name="username" required>
+				<span></span>
+				<label>Username</label>
+			</div>
+			<div class="txt_field">
+				<input type="password" name="password" required>
+				<span></span>
+				<label>Password</label>
+			</div>
+			<div class="pass">Forget password?</div>
+			<input type="submit" value="Login">
+			<div class="signup_link">
+				Not a mebmer? <a href="\register">Signup</a>
+			</div>
+		</form>
+	</div>
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	{% for a in messages %}
+	 <div class="alert-box hide hidden">
+     {{a}}
+     <span class="close-alert">&times;</span>
+ 	 </div>
+
+ 
+ <!-- 
+ 		<script>
+		   const myBtn=document.querySelector(".my-btn");
+		   const alertBox=document.querySelector(".alert-box");
+		   const closeBtn=document.querySelector(".close-alert")     
+		   let timer;
+		   myBtn.addEventListener("click",function () {
+		        showAlertBox();
+		   })
+		   closeBtn.addEventListener("click",function () {
+		        hideAlertBox();
+		        clearTimeout(timer);
+		   })
+
+		   function showAlertBox(){
+		      alertBox.classList.remove("hide");
+		      alertBox.classList.add("show");
+		      // hide animation onload 
+		      if(alertBox.classList.contains("hidden")){
+		          alertBox.classList.remove("hidden");
+		      }
+		      timer=setTimeout(function(){
+		          hideAlertBox();
+		      },6000)
+		   }
+		    
+		   function hideAlertBox(){
+		     alertBox.classList.remove("show");
+		     alertBox.classList.add("hide");
+		   }
+		 </script> -->
+
+	
+	{% endfor%}	
+	{% endif %}
+	{% endwith%}
+
+</body>
+</html>

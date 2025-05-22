@@ -1,0 +1,86 @@
+*
+{
+
+	box-sizing: border-box;
+	
+}
+.
+{
+	padding: 0;
+	margin: 0;
+	
+}
+
+
+
+.hi{
+	text-align: center;
+	font-size: 40px;
+}
+
+.btn{
+	align-content: center;
+	margin-left: 197px;
+
+}
+.btn button{
+	
+	font-size: 26px;
+	margin: 10px 10px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+.btn a{
+	
+}
+table{
+	margin-left: 129px;
+	font-size: 22px;
+	padding: 2px;
+	margin-bottom: 10px;
+	width: 80%;
+}
+table,tr{
+	border: 3px solid black;
+	
+}
+td{
+	border: 2px solid black;
+	margin: 2px;
+	padding: 2px;
+	height: 58px;
+	text-align: center;
+}
+.category{
+	text-align: center;
+	font-size: 34px;
+}
+td img{
+	height: 45px;
+	width: 45px;
+}
+td a {
+	font-size: 1px;
+}
+td input[type="submit"]{
+	font-size: 17px;
+	border-radius: 5px;
+	background: #C5431C;
+	color: #ffffff;
+	cursor: pointer;
+}
+.reports a {
+	text-decoration: none;
+	font-size: 25px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	color: #570000;
+	
+
+}
+.reports a li{
+	padding-bottom: 10px;
+}
+.reports{
+	margin-left: 480px;
+}

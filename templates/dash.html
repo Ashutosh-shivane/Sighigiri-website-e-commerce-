@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>animated dashboard form</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\dash.css">
+</head>
+<body>
+	{% extends "adminbase.html" %}
+	{% block body %}
+	<div class="center">
+		<h1>welcome admin
+
+		</h1>
+		
+		<h1>you can add product here</h1>
+		<form method="post" action="\dashsub" enctype="multipart/form-data">
+			
+			<div class="txt_field">
+				<input type="text" name="product_name" required>
+				<span></span>
+				<label>Prouduct name</label>
+			</div>
+			<div class="txt_field">
+				<input type="text" name="pid" required>
+				<span></span>
+				<label>product id</label>
+			</div>
+			<div class="txt_field">
+				<input type="text" name="price" required>
+				<span></span>
+				<label>Rate</label>
+			</div>
+			<div class="text_area">
+			<label>Description :-</label>
+			<textarea cols="45" rows="15" name="desc"required></textarea>
+			</div>
+
+			<div class="txt_field">
+				
+				<input type="text" name="img" required>
+				
+				<span></span>
+
+				<label>image file name:</label>
+
+			</div>
+			<input type="file" name="file1" required>
+			<div class="txt_field">
+				<input type="text" name="category" required>
+				<span></span>
+				<label>category:</label>
+			</div>
+			<div class="txt_field">
+				<input type="text" name="stock" required>
+				<span></span>
+				<label>stock</label>
+			</div>
+
+			
+			
+			<a href="\dashsub"><input type="submit" value="Submit"></a>
+			</div>
+			
+		</form>
+		<!-- <div id="logout"><a href="\dashproduct"><input type="submit" value="Back"></a></div>
+ -->
+	</div>
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	{% for a in messages %}
+	{{a}}
+	{% endfor%}	
+	{% endif %}
+	{% endwith%}
+	{% endblock %}		
+</body>
+</html>

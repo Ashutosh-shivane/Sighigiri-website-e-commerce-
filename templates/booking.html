@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<style>
+.body{
+    background: #FFF9F0;
+}
+
+.spbanner{
+    min-height: 100vh;
+    background:linear-gradient(120deg, #e89278,#ee7e6d);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding-bottom: 20px;
+}
+.spcard-container{
+    display: grid;
+    grid-template-columns: 420px 420px;
+}
+.spbanner h2{
+    padding-bottom: 13px;
+    margin-bottom: 20px;
+}
+.spcard-content{
+    background: #fff;
+    height: 540px;
+}
+.spcard-content h5{
+    margin-left: 44px;
+    color: #000;
+    padding: 0px 0 10px 0;
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 0px;
+    padding-top: 9px;
+    margin-bottom: 0px;
+}
+.spcard-content h3{
+    text-align: center;
+    color: #000;
+    padding: 0px 0 10px 0;
+    font-size: 26px;
+    font-weight: 500;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.spform-row{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+.spform-row1{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+form input[type="time"]{
+    display: block;
+    width: 84%;
+    margin: 15px 12px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+    margin-left: 34px;
+}
+form input{
+    display: block;
+    width: 100%;
+    margin: 15px 12px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+}
+form input[type = text], form input[type = number],form input[type = date], form input::placeholder, select{
+    color: #9a9a9a;
+}
+form input[type = submit]{
+    color: #fff;
+    background: #f2745f;
+    padding: 12px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+form input[type = submit]:hover{
+    opacity: 0.9;
+}
+@media(max-width: 992px){
+    .card-container{
+        grid-template-columns: 100%;
+        width: 100vw;
+    }
+    .card-img{
+        height: 330px;
+    }
+}
+
+</style>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Booking Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        {% set xyz=ext %}
+        {% extends xyz %}
+        {% block body %}
+        
+        <section class = "spbanner">
+            <h2>BOOK YOUR TICKET NOW</h2>
+
+                <div class = "spcard-content">
+                    <h3> Museum Booking</h3>
+                    <h5>booking no. :{{bno+1}}</h5>
+                    <form action="\booking2" method="post">
+                       <!--  <div class = "form-row">
+                             <input type = "time" name="hours" placeholder="Time" required >
+                             
+                            
+                        </div> -->
+                         <div class = "spform-row">
+                            <input type = "date" name="date" 
+                             placeholder="Date" min={{date}} required>
+                        
+                        </div>
+
+                        <div class = "spform-row">
+                            <input type = "text" name="name" placeholder="Full Name" required>
+                            <input type = "text" name="phone" placeholder="Phone Number" required>
+                        </div>
+
+                        <div class = "spform-row1">
+                            <input type = "text" name="adhar" placeholder="Aadhaar Number" required>
+                            <input type = "text" name="add" placeholder="Address" required>
+
+                        </div>
+
+                        <div class = "spform-row">
+                            <input type = "number" name="normal" placeholder="How Many Persons?" min = "1">
+    
+                        </div>
+                        <div class = "spform-row">
+                            <input type = "number" name="kids" placeholder="How Many Kids?" min= "1">
+                            <input type = "submit" value = "BOOK TICKET">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        {% endblock %}   
+    </body>
+</html>

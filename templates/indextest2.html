@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>animated dashboard form</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\dash.css">
+</head>
+<body>
+	{% extends "adminbase.html" %}
+	{% block body %}
+	<div class="center">
+		<h1>Particular Product Report
+	<form action="/repo/particularprod/down" method="post">
+	Select product :-	
+	<select name="name">
+		
+		{% for data in data %}
+		 	<option value="{{data[0]}}">{{data[0]}}</option>
+		{% endfor %}
+	</select>
+		<input type="submit" value="Submit">
+	</form>
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+</style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop-dowm menu</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="\..\static\museum1.css">
+</head>
+<body>
+  {% set xyz = ext %}
+  {% extends xyz %}
+  {% block body %}
+
+
+  <div class="nhead1">
+    Welcome To Museum
+  </div>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  
+      <img src="{{ url_for('static', filename='museum/museum6.jpg' ) }}" style="width:100%">
+  
+</div>
+
+<div class="mySlides fade">
+  
+      <img src="{{ url_for('static', filename='museum/museum4.jpg' ) }}"  style="width:100%">
+  
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+<div class="scontent1">
+ <div class="nhead2">Siddhagiri Gramjivan Museum</div>
+  <h3><p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The biggest attraction of the Siddhagiri Matha 
+
+is the Siddhagiri Museum. It is both a closed and open 
+
+air museum which depicts village life as it was until 
+
+100 years ago, Much of that life has either already 
+
+disappeared or is disappearing. The idea behind the 
+
+museum is to preserve the old way of life, and the style 
+
+of living for the posterity to know. 
+
+Swamiji realized that the self sufficient way of 
+
+life that was prevalent just a hundred years ago was a 
+
+thing of the past. There was no coordinated effort to 
+
+record this way of life for future generations to know. 
+
+Swamiji decided to make a museum which show- 
+
+cased a model self sufficient Indian village. Moreover 
+
+the earning of the museum would also help in the 
+
+building of the hospital. With great endeavurs and 
+
+creative genius of Swamiji the first phase of Museum 
+
+completed in July 2006. The thought behind museum 
+
+was to preserve the rural culture and information of 
+
+Indian way of life. The museum became massively 
+
+popular among visitors and now it earns around 50.000 
+
+to 300.000 rupees daily. Siddhagiri Museum is 
+
+unique in the way that it depicts the
+
+holistic life of Indian 
+
+
+
+village. </p>
+</h3>
+<br><br>
+<div class="price">
+  <div class="nhead3"><h2>Ticket Price </h2></div><ul type="diamond">
+<li>For  children ticket is 70rs (age between 0 to 16 years)<br></li>
+<li>For normal ticket is 130rs.</li></ul>
+</div>
+
+
+  <div class="item">
+     
+    <a href="\booking"><button>Book Now</button></a>
+    <a href="\ticketsearch"><button>show Ticket</button></a>
+  </div>  
+
+</div>
+<div class="sheader2">
+<div class="nhead1">For school and colleges</div>
+<h3>If you arrange the trip to visit museum there are special concensions, But student must carry there identity<br>
+In acadmic trip there are special plan shown in below table<br>
+Online booking is not available for trips.</h3>
+<table>
+  <tr><th>Class</th><th>Plan</th><th>Price</th>
+  </tr>
+  <tr>
+    <td>Junior kg</td>
+    <td><ul>
+      <li>museum</li>
+      <li>maya mahal</li>
+      <li>prerana park</li>
+      <li>toy train</li></ul>
+    </td>
+    <td>50rs</td></tr>
+    <tr>
+    <td>Std 1 to 4<sup>th</sup></td>
+    <td><ul>
+      <li>museum</li>
+      <li>maya mahal</li>
+      <li>prerana park</li>
+      <li>toy train</li>
+      <li>Divya garden</li></ul>
+    </td>
+    <td>100rs</td>
+  </tr>
+  <tr>
+    <td>Std 5 to 10<sup>th</sup></td>
+    <td><ul>
+      <li>museum</li>
+      <li>maya mahal</li>
+      <li>prerana park</li>
+      <li>Science centre</li>
+      <li>7d show</li>
+      <li>Bhoot bangala</li>
+      <li>Divya garden</li></ul>
+    </td>
+    <td>200rs</td>
+  </tr>
+  <tr>
+    <td>Std 11 to 12<sup>th</sup></td>
+    <td><ul>
+      <li>museum</li>
+      <li>maya mahal</li>
+      <li>prerana park</li>
+      
+      <li>7d show</li>
+      <li>Bhoot bangala</li>
+      <li>Divya garden</li></ul>
+    </td>
+    <td>250rs</td>
+  </tr>
+
+</table>
+  </div>
+  {% endblock%}
+</body>
+</html>

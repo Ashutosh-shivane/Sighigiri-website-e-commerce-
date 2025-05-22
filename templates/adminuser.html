@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>animated dashboard form</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\dash.css">
+</head>
+<body>
+	<div class="center">
+		<h1>welcome admin
+
+		</h1>{% for prod in prods%}
+		{% set no=prod.ids %}
+		<form method="post" action="/dashsub1/{{prod.ids}}">
+			
+			<div class="txt_field">
+				<input type="text" name="product_name" value="{{prod.name}}" required>
+				<span></span>
+				<label>Prouduct name</label>
+			</div>
+			<div class="txt_field">
+				<input type="text" name="price" value="{{prod.price}}" required>
+				<span></span>
+				<label>price</label>
+			</div>
+			<div class="text_area">
+			<label>Description :-</label>
+			<textarea cols="45" rows="15" name="desc" required>{{prod.desci}}</textarea>
+			</div>
+			<div class="txt_field">
+				<input type="text" name="img" value="{{prod.img}}" required>
+				<span></span>
+				<label>image file name</label>
+			</div>
+
+			
+			
+			<a href="/dashsub1/{{prod.ids}}"><input type="submit" value="Update"></a>
+			</div>
+			
+		</form>
+		{% endfor %}
+		<div id="logout"><a href="\dashproduct"><input type="submit" value="back"></a></div>
+
+	</div>
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	{% for a in messages %}
+	{{a}}
+	{% endfor%}	
+	{% endif %}
+	{% endwith%}		
+</body>
+</html>

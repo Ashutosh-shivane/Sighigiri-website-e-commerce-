@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>animated dashboard form</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\dash.css">
+</head>
+<body>
+	{% extends "adminbase.html" %}
+	{% block body %}
+	<div class="center">
+		<form action="/carter/{{cart.cartid}}" method="POST">
+			name={{prod.name}}<br>
+		rate={{prod.price}}<br>
+		quntity=
+		<input type="number" name="qty" min=1 max="{{b}}" value="{{cart.qty}}">
+		<input type="submit" value="submit">
+		</form>
+		
+			
+			
+			
+			
+
+			
+			
+			
+		
+
+	</div>
+	
+	{% endblock %}		
+</body>
+</html>

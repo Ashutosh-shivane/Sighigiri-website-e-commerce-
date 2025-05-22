@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+/**{
+	margin: 0;
+	padding: 0;
+	background-color: ;
+
+	}
+.body{
+	margin: 0;
+	padding: 0;
+	background-color: ;
+	font-family: Fantasy;
+
+}*/
+
+
+.assp
+{
+	width: 600px;
+	margin: 100px auto 0 auto;
+	padding: 20px;
+	box-shadow: 0 4px 8px #30475e,0 4px 8px 0 #30475e;
+	background-color: #F1C40F;
+	font-size: 20px;
+
+}
+.as2
+{
+	width: 600px;
+	margin: 100px auto 0 auto;
+	padding: 20px;
+	box-shadow: 0 4px 8px #30475e,0 4px 8px 0 #30475e;
+	background-color: #F1C40F;
+	font-size: 20px;
+}
+.h1
+{
+	text-align: center;
+}
+.box1
+{
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 15px;
+	box-sizing: border-box;
+	margin: 10px 0 15px 0;
+	background-color: /*#30475e*/;
+}
+.pk
+{
+	display: inline-block;
+}
+.box2
+{
+	padding: 10px;
+	border: none;
+	border-radius: 15px;
+	margin: 10px 0 15px 0;
+	background-color: /*30475e*/ ;
+	width: 300%;
+}
+.sp{
+	width: 49%;
+	padding: 10px;
+	border: none;
+	border-radius: 15px;
+	background-color: /*#30475e*/ #D0D3D4;
+	font-size: 18px;
+	color: black;
+	font-size: 20px;
+
+}
+table{
+	margin-left: 129px;
+	font-size: 22px;
+	padding: 2px;
+	margin-bottom: 10px;
+	margin-top: 40px;
+	width: 80%;
+}
+table,tr{
+	border: 3px solid black;
+	
+}
+td{
+	border: 2px solid black;
+	margin: 2px;
+	padding: 2px;
+	height: 58px;
+	text-align: center;
+}
+
+@media screen and (max-width: 600px){
+
+	.body{
+		padding: 20px;
+	}
+	.form{
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.pk{
+		display: block;
+	}
+	.box2{
+		width: 100%;
+		box-sizing: border-box;
+	}
+	
+
+
+}
+</style>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Payment Details</title>
+</head>
+<body>
+	{% extends "base1.html" %}
+  	{% block body %}
+	 
+	<table>
+		
+		<tr>
+			<td>name</td>
+			<td>quantity</td>
+			
+			<td>price</td>
+			
+		</tr>
+		
+		<tr>
+			<td>{{prod.name}}</td>
+			<td>1</td>
+			<td>{{prod.price}}</td>
+			
+			
+			
+		</tr>
+		
+		
+	</table>
+	<form action="\buy2" method="post" class="assp">
+		
+
+		<h1 align="center">Card Details</h1><br>
+
+		<input type="radio" name="pay" value="credit" required id="bc1" checked class="radio">
+        <label for="bc1"><span><i class="fa fa-cc-visa"></i> Credit Card</span></label>
+        <input type="radio" name="pay" value="debit" required id="bc2" class="radio">
+        <label for="bc2"><span><i class="fa fa-cc-paypal"></i> Debit Card</span></label><br><br>
+		
+		<label for="cardnym">Name</label><br>
+		<input class="box1"  type="text" placeholder="Card Name" required name="name"><br>
+		 <!-- <input class="box1" type="number" name="number" id="number" placeholder="1234 1234 1234 1234"><br>
+  -->
+		<div class="pk">
+		<label for="cardex">Card Number</label><br>
+		<input class="box2" input type="tel" placeholder="Card Number" name="cardno" ><br>
+	</div><br>
+
+
+		<div class="pk">
+		<label for="cardcvc">Card cvc</label><br>
+		<input class="box2" input type="tel" placeholder="Card CVC" required name="cvv"><br>
+	</div><br><br>
+
+		<div class="pk">	
+		<label for="cardye">Expiry Date</label><br>
+		<input class="box2" input type="date"  required name="expdate"><br>
+	</div><br>
+
+	
+		<button class="sp" input type="submit" value="pay">Pay Now</button>
+		
+		
+	</form>
+{% endblock %}
+</body>
+</html>

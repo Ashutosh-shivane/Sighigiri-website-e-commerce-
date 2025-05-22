@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>menu-bar</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\base.css">
+	<link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="header">
+	<img src="{{ url_for('static', filename='img/logo12.png' ) }}" align="center">
+	<h1>SIDDHIGIRI MATH</h1>
+</div>
+	<div class="menu-bar">
+<ul>
+	<li class="active"><a href="\"><i class="fa fa-home"></i>Home</a></li>
+	<li><a href="\about"><i class="fa fa-user"></i>AboutUs</a></li>
+	<li><a href="\museum"><i class="fa fa-home"></i>Museum</a>
+		
+	</li>		
+	<li><a href="\ayurvedic">AyurvedicProduct</a>
+		
+	</li>		
+
+
+	<li><a href="#"><i class="fa fa-clone"></i>Facilities</a></li>
+	<li><a href="\feedback"><i class="fa fa-edit"></i>Feedback</a></li>
+	<li><a href="\contact"><i class="fa fa-edit"></i>Contact</a></li>
+</ul>
+<a href="\logout"><input type="submit" value="logout"></a>
+<a href="\profile"><input type="submit"  value="profile"></a>
+</div>
+{% block body %}
+{% endblock%}
+
+
+      <div class="newfooter">
+      	<img src="{{ url_for('static', filename='img/logo4.png' ) }}" align="center"><br>
+      	<div class="flex">
+      	<div class="foot1">
+      	<h4>SHRI KSHETRA SIDDHAGIRI <br>MAHASANSTHAN</h4><br>
+				Address: Kaneri, Tal Karveer, Dist Kolhapur 416 234<br><br>
+
+				Email: info@siddhagirimatham.com<br><br>
+
+				Phone: 0231 268 4113 | 0231 268 4114<br>
+				</div>
+				<div class="foot2">
+
+					<h2>ABOUT US</h2>
+					About Matham<br><br>
+					About Swamiji
+				</div>
+				<div class="foot3">
+					<h2>Our Facility</h2>
+				</div>
+				<div class="foot4">
+					<h2>FIND US ON</h2>
+				</div>
+			</div>
+      </div>
+      <div class="newnav">
+      	<div class="newnav2">
+      	<a href="\"><h2>home</h2></a>
+      	<a href="\about"><h2>about us</h2></a>
+      	<a href="\museum"><h2>museum</h2></a>
+      	<img src="{{ url_for('static', filename='img/logo12.png' ) }}" align="center">
+      	<a href="\ayurvedic"><h2>product</h2></a>
+      	<a href="\feedback"><h2>feedback</h2></a>
+      	<a href="\contact"><h2>contact</h2></a>
+      	</div>
+      	
+      	© 2022, Devasthan Management Committee, Western Maharashtra, Kolhapur.<br>
+      	Created by as & sp
+      </div>
+      
+	
+	
+</div>
+
+</body>
+</html>

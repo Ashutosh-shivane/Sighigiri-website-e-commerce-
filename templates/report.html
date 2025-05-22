@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>menu-bar</title>
+	<link rel="stylesheet" type="text/css" href="\..\static\aptable.css">
+	
+</head>
+<body>
+	{% extends "adminbase.html" %}
+	{% block body %}
+<div class="hi">
+	<h1>Welcome admin</h1>
+</div>
+<div class="reports">
+	<ul>
+	<a href="/repo/allprod">	<li>All product Report</li>
+	<a href="/repo/productdate">	<li>Product Date wise</li></a>
+	<a href="/repo/particularprod">	<li>product individual</li></a>
+	<a href="/repo/customer">	<li>Customer individual</li></a>
+	<a href="/repo/visitorsall">	<li>All visitors</li></a>
+	<a href="/repo/visitoradult">	<li>visitor adult</li></a>
+	<a href="/repo/visitorkids">	<li>visitor Kids</li></a>
+	<a href="/repo/visitordate">	<li>visitor date wise</li></a>
+	</ul>
+</div>
+{% endblock %}
+</body>
+</html>
